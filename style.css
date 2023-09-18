@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Pacifico&family=Poppins:ital@0;1&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: rgb(18,18,19);
+    font-family: 'Lilita One', cursive;
+}
+
+#container{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    flex-direction: column;
+}
+
+header{ 
+    border-bottom: 1px solid white;
+    width: 100%;
+}
+
+.title{
+    color: white;
+    margin-top: 25px;
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 100;
+    margin: 0.4rem;
+}
+
+.made-by{
+    display: inline;
+    color: rgb(255, 255, 255);
+    font-weight: normal;
+}
+
+.my-name{
+    display: inline;
+    color: green;
+    font-weight: bold;
+}
+
+#board-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    overflow: hidden;
+    margin-top: 100px;
+}
+
+#board{
+    display: grid;
+    grid-gap: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.square{
+    position: relative;
+    border: 2px solid rgb(65,68,88);
+    min-width: 60px;
+    min-height: 60px;
+    transform-style: preserve-3d;
+    color: white;
+}
+
+.square-front, .square-back{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    font-size: 3rem;
+    font-weight: normal;
+    text-transform: uppercase;
+
+    transition: all 0.3s;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.square-back{
+    transform: rotatex(180deg);
+}
+
+.green-square{
+    background-color: rgb(121,184,81);
+    border: 2px solid transparent;
+    animation: flip-horizontal-bottom 0.7s ease-in-out forwards;
+}
+
+.yellow-square{
+    background-color: rgb(181,159,59);
+    border: 2px solid transparent;
+    animation: flip-horizontal-bottom 0.7s ease-in-out forwards;
+}
+
+.grey-square{
+    background-color: rgb(58,58,60);
+    border: 2px solid transparent;
+    animation: flip-horizontal-bottom 0.7s ease-in-out forwards;
+}
+
+.won{
+    animation: square-wave 0.3s;
+}
+
+.gamemode{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+@keyframes flip-horizontal-bottom {
+    0% {
+        -webkit-transform: rotateX(0);
+        transform: rotateX(0)
+    }
+
+    to {
+        -webkit-transform: rotateX(-180deg);
+        transform: rotateX(-180deg)
+    }
+}
+
+@keyframes square-wave {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-50px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
