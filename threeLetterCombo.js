@@ -6,15 +6,15 @@ let letters = [];
 let word = "";
 let wordArray = [];
 
-let squaresPerRow = 5;
-let squaresPerColumm = 6;
+let squaresPerRow = 3;
+let squaresPerColumm = 8;
 
-let availableLetters = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "Enter", "Backspace"];
+let availableLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "Enter", "Backspace"];
 
 let won = false;
 let canType = true;
 
-let HTML = "Numbers.html";
+let HTML = "threeLetterCombo.html";
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -48,8 +48,8 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 function GetName(){
-    for (index = 0; index < squaresPerRow; index++){
-        word += Numbers[Math.floor(Math.random() * Numbers.length)];
+    for (index = 0; index < 3; index++){
+        word += Letters[Math.floor(Math.random() * Letters.length)];
     }
 }
 
@@ -163,7 +163,7 @@ document.addEventListener("keydown", (event) => {
     if(availableLetters.indexOf(event.key) == -1 || won || !canType){ return;}
 
     if (event.key == "Enter"){
-        if (letters.length < 5) {window.alert("Word must be at least 5 numbers long!"); return;}
+        if (letters.length < 3) {window.alert("Word must be at least 3 letters long!"); return;}
         HandleSummitWord();
         return;
     }
