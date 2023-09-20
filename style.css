@@ -64,12 +64,18 @@ h6{
     font-weight: normal;
 }
 
-.link{
-    font-size: 3rem;
-    color: white;
+.link, .link-daily{
+    font-size: 1rem;
+    color: rgb(255, 255, 255);
+    text-align: center;
 }
 
-.link:hover{
+.link-daily{
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.link:hover, .link-daily:hover{
     color: rgb(16, 174, 16);
 }
 
@@ -141,10 +147,12 @@ h6{
 }
 
 .gamemode{
+    padding: 20px;
     margin-top: 50px;
     display: flex;
     flex-direction: column;
     gap: 20px;
+    outline: 2px solid white;
 }
 
 @keyframes flip-horizontal-bottom {
